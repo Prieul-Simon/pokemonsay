@@ -32,34 +32,14 @@ sudo apt-get install fortune cowsay
 Keep in mind that `pokemonsay` will only work if you have `cowsay` installed and available in your `$PATH`. To install `pokemonsay` run these commands in a terminal window:
 
 ```bash
-git clone https://github.com/HRKings/pokemonsay-newgenerations
-cd pokemonsay-newgenerations
-./install.sh
+git clone https://github.com/Prieul-Simon/pokemonsay.git
+cd pokemonsay
+ln -s <absolute_path>/pokemonthink.sh $HOME/.local/bin/pokemonthink
+ln -s <absolute_path>/pokemonsay.sh $HOME/.local/bin/pokemonsay
 ```
 
-After the last command, you will have `pokemonsay` installed in you home folder in `~/.bin/pokemonsay/`. And an symbolic link will be created in `~/bin/pokemonsay`, so that you can have `pokemonsay` in your `$PATH` too.
-
-### Arch Linux
-
-Again, if you use Arch Linux or any other Arch-based distro, you can get pokemonsay from the AUR (using `yay` for example):
-
-```bash
-yay -S pokemonsay-newgenerations-git
-```
-
-### Debian and Ubuntu
-On any distro based on these two, you can use [MPR](https://mpr.hunterwittenborn.com/) to install pokemonsay. Use tap or makedeb, the choice is yours.
-
-`Makedeb`:
-```
-git clone https://mpr.hunterwittenborn.com/pokemonsay-newgenerations-git.git
-cd pokemonsay-newgenerations-git
-makedeb -si
-```
-Or, using `tap`:
-```
-tap install pokemonsay-newgenerations-git
-```
+~~After the last command, you will have `pokemonsay` installed in you home folder in `~/.bin/pokemonsay/`. And an symbolic link will be created in `~/bin/pokemonsay`, so that you can have `pokemonsay` in your `$PATH` too.~~\
+After the last command, you will have a symbolic link created in `~/.local/bin/pokemonsay`, so that you can have `pokemonsay` in your `$PATH`.
 
 ## Usage
 
@@ -154,14 +134,6 @@ This is like the method above, but it will select a random form each time the co
 ```bash
 # To specify Rotom and select a random form
 pokemonsay -D 479 "I have multiple forms!"
-```
-
-## Uninstall
-
-Just in case you hate Pokemon and you've installed `pokemonsay` "by mistake"... Humpf! You can uninstall it by running:
-
-```bash
-sh $HOME/.bin/pokemonsay/uninstall.sh
 ```
 
 ## Building the whole thing

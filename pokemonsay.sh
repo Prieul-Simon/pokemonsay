@@ -34,7 +34,14 @@ usage() {
 	exit 0
 }
 
-INSTALL_PATH=${HOME}/.bin/pokemonsay
+####### Begin edit
+# INSTALL_PATH=${HOME}/.bin/pokemonsay
+if [ -z "$DATA_PATH" ]; then
+    echo 'Error: DATA_PATH is empty'
+    exit 1
+fi
+INSTALL_PATH=${DATA_PATH}/dev/pokemonsay
+####### End   edit
 # Where the pokemon are.
 POKEMON_PATH=${INSTALL_PATH}/pokemons
 
